@@ -1,0 +1,30 @@
+{
+  "name": "emmi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.5.1",
+    "connect-mongo": "^5.1.0",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-sessions": "^1.0.6",
+    "formidable": "^3.5.1",
+    "highlight.js": "^11.10.0",
+    "markdown-it": "^14.1.0",
+    "mkdirp": "^3.0.1",
+    "mongoose": "^8.7.1"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.7"
+  }
+}
