@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <%- include('../layouts/head',{ title: 'Kayıt Ol | Emmi'}) %>
+    <script type="module" src="/js/register.js"></script>
+  </head>
+  <body>
+    <section class="section form-section">
+      <div class="container">
+        <div class="form-card">
+          <div class="card-header">
+            <a href="/" class="logo">
+              <img
+                src="/images/logo-light.svg"
+                alt="Emmi"
+                width="163"
+                height="40"
+                class="light"
+              />
+              <img
+                src="/images/logo-dark.svg"
+                alt="Emmi"
+                weight="163"
+                height="40"
+                class="dark"
+              />
+            </a>
+            <p class="body-large text-on-surface-variant">
+              Emmi topluluğuna sizde katılın
+            </p>
+          </div>
+          <form action="" class="form" data-form>
+            <div class="text-field-wrapper">
+              <label for="name" class="body-large label">Tam isim</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                autocomplete="name"
+                autofocus
+                placeholder=" "
+                required
+                class="body-large text-field"
+              />
+            </div>
+            <div class="text-field-wrapper">
+              <label for="email" class="body-large label">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="email"
+                placeholder=" "
+                required
+                class="body-large text-field"
+              />
+            </div>
+            <div class="text-field-wrapper">
+              <label for="password" class="body-large label">Şifre</label>
+              <div class="input-wrapper">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder=" "
+                  minlength="8"
+                  required
+                  class="body-large text-field"
+                />
+                <div class="eye-icon" id="togglePassword" style="display: none">
+                  <span class="material-symbols-rounded">visibility_off</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-field-wrapper">
+              <label for="confirm-password" class="body-large label"
+                >Şifre tekrar</label
+              >
+              <div class="input-wrapper">
+                <input
+                  type="password"
+                  name="confirm_password"
+                  id="confirm-password"
+                  placeholder=" "
+                  required
+                  class="body-large text-field"
+                />
+                <div
+                  class="eye-icon"
+                  id="toggleConfirmPassword"
+                  style="display: none"
+                >
+                  <span class="material-symbols-rounded">visibility_off</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-fill" data-submit-btn>
+              <p class="label-large">Kayıt ol</p>
+              <div class="state-layer"></div>
+            </button>
+          </form>
+          <div class="card-footer">
+            <p class="label-large">Zaten bir hesabınız var mı?</p>
+            <a href="/login" class="label-large text-primary">Giriş yap</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="snackbar-wrapper" data-snackbar-wrapper></div>
+  </body>
+</html>
