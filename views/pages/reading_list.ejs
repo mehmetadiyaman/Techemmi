@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <%- include('../layouts/head',{ title: 'Okuma listesi | Emmi'}) %>,
+    <script src="/js/script.js" defer></script>
+  </head>
+  <body>
+    <!--
+    #Üst uygulama çubuğu
+    -->
+    <%- include("../partials/top_app_bar")%>
+
+    <main class="main">
+      <!--
+    #Home 
+    -->
+      <article class="page">
+        <div class="container">
+          <h2 class="headline-small page-title text-on-surface">
+            Okuma listesi
+          </h2>
+          <div class="blog-list">
+            <% if (locals.readingListBlogs.length){ %> <%
+            locals.readingListBlogs.forEach(blog => { %> <%-
+            include("../partials/card", {blog}) %> <% }) %> <% } else { %>
+            <p class="body-large text-on-surface-variant">
+              Okuma listesinize herhangi bir paylaşım eklemediniz.
+            </p>
+            <% }%>
+          </div>
+          <% if (locals.pagination.next || locals.pagination.prev) { %> <%-
+          include('../partials/pagination') %> <%}%>
+        </div>
+      </article>
+    </main>
+    <!--
+    #Footer
+    -->
+    <%- include("../layouts/footer")%>
+  </body>
+</html>

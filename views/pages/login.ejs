@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <%- include('../layouts/head',{ title: 'Giriş Yap | Emmi'}) %>
+
+    <script type="module" src="/js/login.js"></script>
+  </head>
+  <body>
+    <section class="section form-section">
+      <div class="container">
+        <div class="form-card">
+          <div class="card-header">
+            <a href="/" class="logo">
+              <img
+                src="/images/logo-light.svg"
+                alt="Emmi"
+                width="163"
+                height="40"
+                class="light"
+              />
+              <img
+                src="/images/logo-dark.svg"
+                alt="Emmi"
+                weight="163"
+                height="40"
+                class="dark"
+              />
+            </a>
+            <p class="body-large text-on-surface-variant">
+              Emmi topluluğuna sizde katılın
+            </p>
+          </div>
+          <form action="" class="form" data-form>
+            <div class="text-field-wrapper">
+              <label for="email" class="body-large label">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="email"
+                placeholder=" "
+                required
+                class="body-large text-field"
+                autofocus
+              />
+            </div>
+            <div class="text-field-wrapper">
+              <label for="password" class="body-large label">Şifre</label>
+              <div class="input-wrapper">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder=" "
+                  minlength="8"
+                  required
+                  class="body-large text-field"
+                />
+                <div class="eye-icon" id="togglePassword">
+                  <span class="material-symbols-rounded">visibility_off</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-fill" data-submit-btn>
+              <p class="label-large">Giriş Yap</p>
+              <div class="state-layer"></div>
+            </button>
+          </form>
+          <div class="card-footer">
+            <p class="label-large">Emmi'ye yeni misin?</p>
+            <a href="/register" class="label-large text-primary"
+              >Hesap oluştur</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="snackbar-wrapper" data-snackbar-wrapper></div>
+  </body>
+</html>

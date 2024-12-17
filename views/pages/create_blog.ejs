@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <%- include('../layouts/head',{ title: 'Yeni Blog | Emmi'}) %>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <script src="/js/script.js" defer></script>
+    <script src="/js/create_blog.js" type="module"></script>
+  </head>
+  <body>
+    <!--
+    #Üst uygulama çubuğu
+    -->
+    <%- include("../partials/top_app_bar")%>
+    <main class="main">
+      <article class="page create-blog-page">
+        <div class="container">
+          <h2 class="page-title text-on-surface headline-small">
+            Blog oluştur
+          </h2>
+          <form class="blog-write-form" data-form>
+            <div class="image-field-wrapper">
+              <label for="banner" class="btn filled-tonal">
+                <input
+                  type="file"
+                  name="banner"
+                  accept="image/*"
+                  id="banner"
+                  data-image-field
+                />
+                <span class="material-symbols-rounded leading-icon"
+                  >cloud_upload</span
+                >
+                <p class="label-large">Fotoğraf yükle</p>
+                <div class="state-layer"></div>
+              </label>
+
+              <p class="text label-large text-on-surface-variant">
+                En iyi sonuçlar için 21:9 oranını kullanın. <br />JPEG ve PNG
+                maksimun 5 MB boyutunda olmalı
+              </p>
+              <div class="image-preview img-cover" data-image-preview></div>
+              <button
+                type="button"
+                class="icon-btn filled-tonal"
+                data-image-preview-clear
+              >
+                <span class="material-symbols-rounded">delete</span>
+                <div class="state-layer"></div>
+              </button>
+            </div>
+            <input
+              type="text"
+              name="title"
+              aria-label="Blog başlığı"
+              placeholder="Makale başlığı..."
+              required
+              class="title-field headline-large"
+            />
+            <textarea
+              name="content"
+              aria-label="Blog içeriği"
+              placeholder="Gönderi içeriğinizi buraya yazın"
+              required
+              class="textarea body-large"
+              data-textarea-auto-height
+            ></textarea>
+            <div class="footer-actions">
+              <button class="btn btn-fill" data-publish-btn>
+                <p class="label-large">Paylaş</p>
+                <div class="state-layer"></div>
+              </button>
+            </div>
+          </form>
+        </div>
+      </article>
+    </main>
+    <!--
+    #Footer
+    -->
+    <%- include("../layouts/footer")%>
+
+    <!--
+    #Snackbar
+    -->
+    <div class="snackbar-wrapper" data-snackbar-wrapper></div>
+  </body>
+</html>

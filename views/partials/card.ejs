@@ -1,0 +1,66 @@
+<% const { _id: blogId, banner: { url: bannerURL } = {}, title, owner: { name,
+username, profilePhoto: { url: profilePhoto } = {} }, createdAt, readingTime,
+reaction, totalBookmark } = locals.blog; %> <% const compressedBannerURL =
+bannerURL?.replace('upload/', 'upload/w_360,h_155,c_auto/q_auto/f_auto/'); %> <%
+const compressedProfileURL = profilePhoto?.replace('upload/',
+'upload/w_40,h_40,c_auto/f_auto/'); %>
+
+<div class="card">
+  <% if (compressedBannerURL) { %>
+  <figure class="card-banner img-holder">
+    <img
+      src="<%= compressedBannerURL %>"
+      width="360"
+      height="155"
+      alt="<%= title %>"
+      class="img-cover"
+    />
+  </figure>
+  <% } %>
+  <div class="card-content">
+    <div class="card-meta">
+      <div class="avatar">
+        <% if (compressedProfileURL) { %>
+        <img
+          src="<%= compressedProfileURL %>"
+          width="32"
+          height="32"
+          alt="<%= name %>"
+          class="img-cover"
+        />
+        <% } else { %>
+        <p class="title-medium"><%= name[0] %></p>
+        <% } %>
+      </div>
+      <div>
+        <p class="label-large text-on-surface"><%= name %></p>
+        <p class="body-small text-on-surface-variant">
+          <%= new Date(createdAt).toLocaleDateString('tr-TR', { month: 'long',
+          day: 'numeric' }) %>
+        </p>
+        <p class="label-small text-on-surface-variant trailing-text">
+          <%= readingTime %> min okuma
+        </p>
+      </div>
+    </div>
+    <h3 class="card-title title-medium text-on-surface"><%= title %></h3>
+  </div>
+  <div class="card-footer">
+    <div class="wrapper">
+      <span class="icon-small material-symbols-rounded text-on-surface"
+        >favorite</span
+      >
+      <p class="body-medium text-on-surface-variant"><%= reaction %> Beğeni</p>
+    </div>
+    <div class="wrapper">
+      <span class="icon-small material-symbols-rounded text-on-surface"
+        >bookmark</span
+      >
+      <p class="body-medium text-on-surface-variant">
+        <%= totalBookmark %> Kaydedilme
+      </p>
+    </div>
+  </div>
+  <a href="/blogs/<%= blogId %>" title="<%= title %>" class="card-link"></a>
+  <div class="state-layer"></div>
+</div>

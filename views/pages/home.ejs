@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <%- include('../layouts/head',{ title: 'Ana Sayfa | Emmi'}) %>,
+    <script src="/js/script.js" defer></script>
+  </head>
+  <body>
+    <!--
+    #Üst uygulama çubuğu
+    -->
+    <%- include("../partials/top_app_bar")%>
+
+    <main class="main">
+      <!--
+    #Home 
+    -->
+      <article class="page home-page">
+        <div class="container">
+          <h2 class="headline-small page-title text-on-surface">
+            Güncel blog paylaşımları
+          </h2>
+          <div class="blog-list">
+            <% if (locals.latestBlogs.length) { %> <%
+            locals.latestBlogs.forEach(blog => { %> <%-
+            include('../partials/card',{blog})%> <% }) %> <% } %>
+          </div>
+          <% if (locals.pagination.next || locals.pagination.prev) { %> <%-
+          include('../partials/pagination') %> <%}%>
+        </div>
+      </article>
+    </main>
+    <!--
+    #Footer
+    -->
+    <%- include("../layouts/footer")%>
+  </body>
+</html>
