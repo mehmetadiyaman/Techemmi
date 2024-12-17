@@ -24,13 +24,14 @@ const app = express(); // Express uygulamasını önce oluştur
 
 const register = require("./src/routes/register_route");
 const login = require("./src/routes/login_route");
-const logout = require('./src/routes/logout_route');
-const blogdetail = require('./src/routes/blog_detail_route');
-
+const logout = require("./src/routes/logout_route");
+const blogdetail = require("./src/routes/blog_detail_route");
 const { connectDB, disconnectDB } = require("./src/config/mongoose_config");
 const home = require("./src/routes/home_route");
 const createBlog = require("./src/routes/create_blog_route");
-
+const readingList = require("./src/routes/reading_list_route");
+const blogUpdate = require("./src/routes/blog_update_route");
+const profile = require("./src/routes/profile_route");
 /**
  * görünüm kısmını ayarla
  */
@@ -88,6 +89,10 @@ app.use("/login", login);
 app.use("/logout", logout);
 app.use("/", home);
 app.use("/blogs", blogdetail);
+app.use("/profile", profile);
+app.use(userAuth);
+app.use("/createblog", createBlog);
+app.use("/readinglist", readingList);
 
 /**
  * başlama servisi

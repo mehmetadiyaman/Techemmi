@@ -9,7 +9,7 @@
  * node modüller
  */
 
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 /**
  * özel modüller
