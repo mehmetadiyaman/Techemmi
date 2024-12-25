@@ -1,0 +1,251 @@
+<% const { profilePhoto: { url: profilePhotoURL } = {}, name, username, email,
+bio } = locals.currentUser; %> <% const compressedProfilePhotoURL =
+profilePhotoURL?.replace('upload/', 'upload/w_200,h_200,c_auto,q_auto/f_auto/');
+%>
+
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <%- include('../layouts/head', { title: 'Ayarlar | Emmi' }) %>
+    <script src="/js/script.js" defer></script>
+    <script type="module" src="/js/settings.js"></script>
+  </head>
+  <body>
+    <%- include("../partials/top_app_bar") %>
+
+    <main class="main">
+      <article class="page settings-page">
+        <div class="container">
+          <h2 class="headline-small page-title text-on-surface">Ayarlar</h2>
+          <div class="settings-wrapper">
+            <div class="settings-card">
+              <form class="settings-form" data-basic-info-form>
+                <div class="title-wrapper">
+                  <h3 class="headline-small text-on-surface">Temel bilgiler</h3>
+                  <button
+                    type="submit"
+                    class="btn filled-tonal"
+                    data-basic-info-submit
+                  >
+                    <p class="slabel-large">Değişiklikleri kaydet</p>
+                    <div class="state-layer"></div>
+                  </button>
+                </div>
+
+                <p class="body-large text-on-surface-variant">
+                  Profil fotoğrafı
+                </p>
+
+                <div class="image-field-wrapper avatar-image-field">
+                  <label
+                    for="profilePhoto"
+                    class="label label-large text-on-surface-variant"
+                  >
+                    <input
+                      type="file"
+                      name="profilePhoto"
+                      id="profilePhoto"
+                      accept="image/png,image/jpeg,image/jpg"
+                      data-image-field
+                    />
+                    <span class="material-symbols-rounded leading-icon"
+                      >cloud_upload</span
+                    >
+                    fotoğraf yükle
+                  </label>
+
+                  <% if (compressedProfilePhotoURL) { %>
+                  <div class="image-preview show" data-image-preview>
+                    <img
+                      src="<%= compressedProfilePhotoURL %>"
+                      width="200"
+                      height="200"
+                      alt="<%= name %>"
+                    />
+                  </div>
+                  <% } else { %>
+                  <div class="image-preview" data-image-preview></div>
+                  <% } %>
+                  <button
+                    type="button"
+                    class="icon-btn filled-tonal"
+                    data-image-preview-clear
+                  >
+                    <span class="material-symbols-rounded">delete</span>
+                    <div class="state-layer"></div>
+                  </button>
+                </div>
+
+                <div class="wrapper">
+                  <div class="text-field-wrapper">
+                    <label for="name" class="label body-large">Tam isim</label>
+                    <input
+                      type="text"
+                      name="name"
+                      id="name"
+                      autocomplete="name"
+                      placeholder=""
+                      value="<%= name %>"
+                      required
+                      class="body-large text-field"
+                      aria-label="Tam isim"
+                    />
+                  </div>
+
+                  <div class="text-field-wrapper">
+                    <label for="username" class="label body-large"
+                      >Kullanıcı adı</label
+                    >
+                    <input
+                      type="text"
+                      name="username"
+                      id="username"
+                      autocomplete="username"
+                      placeholder=""
+                      value="<%= username %>"
+                      required
+                      class="body-large text-field"
+                      aria-label="Kullanıcı adı"
+                    />
+                  </div>
+                </div>
+
+                <div class="text-field-wrapper">
+                  <label for="email" class="label body-large"
+                    >E-posta adresi</label
+                  >
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    autocomplete="email"
+                    placeholder=""
+                    value="<%= email %>"
+                    required
+                    class="body-large text-field"
+                    aria-label="E-posta adresi"
+                  />
+                </div>
+
+                <div class="text-field-wrapper">
+                  <label for="bio" class="label body-large">Biyografi</label>
+                  <input
+                    type="text"
+                    name="bio"
+                    id="bio"
+                    placeholder=""
+                    value="<%= bio %>"
+                    maxlength="240"
+                    class="body-large text-field"
+                    aria-label="Biyografi"
+                  />
+                </div>
+              </form>
+            </div>
+
+            <div class="settings-card">
+              <form class="settings-form" data-password-form>
+                <div class="title-wrapper">
+                  <h3 class="headline-small text-on-surface">Şifre değiştir</h3>
+                  <button
+                    type="submit"
+                    class="btn filled-tonal"
+                    data-password-submit
+                  >
+                    <p class="slabel-large">Değişiklikleri kaydet</p>
+                    <div class="state-layer"></div>
+                  </button>
+                </div>
+
+                <div class="text-field-wrapper">
+                  <label for="old-password" class="label body-large"
+                    >Eski şifre</label
+                  >
+                  <div class="input-wrapper">
+                    <input
+                      type="password"
+                      name="old_password"
+                      id="old-password"
+                      autocomplete="current-password"
+                      placeholder=" "
+                      required
+                      class="body-large text-field"
+                      aria-label="Eski şifre"
+                    />
+                    <div class="eye-icon" id="toggleOldPassword">
+                      <span class="material-symbols-rounded"
+                        >visibility_off</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-field-wrapper">
+                  <label for="new-password" class="label body-large"
+                    >Yeni şifre</label
+                  >
+                  <div class="input-wrapper">
+                    <input
+                      type="password"
+                      name="password"
+                      id="new-password"
+                      autocomplete="new-password"
+                      placeholder=" "
+                      required
+                      minlength="8"
+                      class="body-large text-field"
+                      aria-label="Yeni şifre"
+                    />
+                    <div class="eye-icon" id="toggleNewPassword">
+                      <span class="material-symbols-rounded"
+                        >visibility_off</span
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-field-wrapper">
+                  <label for="confirm-password" class="label body-large"
+                    >Yeni şifre tekrar</label
+                  >
+                  <div class="input-wrapper">
+                    <input
+                      type="password"
+                      name="confirm_password"
+                      id="confirm-password"
+                      autocomplete="confirm-password"
+                      placeholder=" "
+                      required
+                      class="body-large text-field"
+                      aria-label="Yeni şifre tekrar"
+                    />
+                    <div class="eye-icon" id="toggleConfirmPassword">
+                      <span class="material-symbols-rounded"
+                        >visibility_off</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="settings-card">
+              <h3 class="headline-small text-error">Hesap silme</h3>
+              <p class="body-large text-on-surface-variant card-text">
+                EMMİ'deki hesabınızı silmeniz, kişisel verilerinizin kalıcı
+                olarak silinmesine neden olacaktır. Bu işlem geri alınamaz.
+              </p>
+              <button class="btn btn-fill error" data-account-delete>
+                <p class="label-large">Hesabımı sil</p>
+                <div class="state-layer"></div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <%- include("../layouts/footer") %>
+    <div class="snackbar-wrapper" data-snackbar-wrapper></div>
+  </body>
+</html>

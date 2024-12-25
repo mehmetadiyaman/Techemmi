@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <%- include('../layouts/head',{ title: `${title} | Emmi`}) %>
+    <script src="/js/script.js" defer></script>
+  </head>
+  <body>
+    <%- include("../partials/top_app_bar")%>
+
+    <main class="main">
+      <article class="page home-page">
+        <div class="container">
+          <h2 class="headline-small page-title text-on-surface">
+            <%= title %> Haberleri
+          </h2>
+
+          <div class="blog-list">
+            <% if (locals.latestBlogs && locals.latestBlogs.length) { %> <%
+            locals.latestBlogs.forEach(blog => { %> <%-
+            include('../partials/vericard', { blog }) %> <% }) %> <% } %>
+          </div>
+
+          <% if (locals.pagination && (locals.pagination.next ||
+          locals.pagination.prev)) { %> <%- include('../partials/pagination') %>
+          <% } %>
+        </div>
+      </article>
+    </main>
+
+    <%- include("../layouts/footer")%>
+  </body>
+</html>

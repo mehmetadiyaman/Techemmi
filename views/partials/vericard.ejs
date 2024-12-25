@@ -1,0 +1,49 @@
+<% const { _id: blogId, banner: { url: bannerURL } = {}, title, description,
+link } = locals.blog; %>
+
+<div class="card">
+  <% if (bannerURL) { %>
+  <figure class="card-banner img-holder">
+    <img
+      src="<%= bannerURL %>"
+      width="360"
+      height="155"
+      loading="lazy"
+      alt="<%= title %>"
+      class="img-cover"
+    />
+  </figure>
+  <% } %>
+
+  <div class="card-content">
+    <h3 class="card-title title-medium text-on-surface truncate-oneline">
+      <%= title %>
+    </h3>
+    <p class="body-medium text-on-surface-variant line-clamp-3">
+      <%= description %>
+    </p>
+  </div>
+
+  <div class="card-footer">
+    <div class="wrapper">
+      <span class="material-symbols-rounded text-on-surface">link</span>
+      <a
+        href="<%= link %>"
+        class="body-medium text-on-surface-variant"
+        target="_blank"
+        rel="noopener"
+      >
+        Haberi Oku
+      </a>
+    </div>
+  </div>
+
+  <a
+    href="<%= link %>"
+    target="_blank"
+    rel="noopener"
+    title="<%= title %>"
+    class="card-link"
+  ></a>
+  <div class="state-layer"></div>
+</div>
