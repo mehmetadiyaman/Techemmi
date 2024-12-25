@@ -27,7 +27,7 @@ const dialog = (props) => {
             </p>
           </div>
           <div class="dialog-actions">
-            <a href="/login" class="btn btn-text" data-dialog-toggler>
+            <a href="/login" class="btn btn-fill" data-dialog-toggler>
               <p class="label-large">Giriş</p>
 
               <div class="state-layer"></div>

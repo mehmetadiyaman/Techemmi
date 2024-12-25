@@ -15,7 +15,7 @@ const mongoose = require("mongoose");
  */
 const Blog = require("../models/blog_model");
 const User = require("../models/user_model");
-const { handleReaction } = require('../controllers/reaction_controller');
+//const { handleReaction } = require('../controllers/reaction_controller');
 
 const markdown = require("../config/markdown_it_config");
 
