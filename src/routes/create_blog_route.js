@@ -23,7 +23,6 @@ router.get("/", renderCreateBlog);
 
 //POST route:Blog oluşturma sayfasını oluştur
 router.post("/", postCreateBlog);
-const getReadingTime = require('../../utils/get_reading_time_utils');
-
+const getReadingTime = require('../utils/get_reading_time_utils');
 
 module.exports = router;
