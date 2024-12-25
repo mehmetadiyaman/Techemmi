@@ -23,7 +23,6 @@ const {
   removeFromReadingList,
 } = require("../controllers/reading_list_controller");
 
-
 const updateVisit = require("../controllers/visit_controller");
 
 // GET route: Blog ayrıntı sayfası

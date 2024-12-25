@@ -16,7 +16,7 @@ const crypto = require("crypto");
 const uploadToCloudinary = require("../config/cloudinary_config");
 const Blog = require("../models/blog_model");
 const User = require("../models/user_model");
-//const getReadingTime = require("../utils/get_reading_time_utils");
+const getReadingTime = require("../utils/get_reading_time_utils");
 
 /**
  * Blog oluşturma sayfasını getir

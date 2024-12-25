@@ -1,92 +1,91 @@
 <% const { profilePhoto: { url: profilePhotoURL =
-  '/images/profilePhoto-default.jpg' } = {}, name: profileName, username:
-  profileUsername, bio, blogPublished, createdAt } = locals.profile; const
-  compressedProfilePhotoURL = profilePhotoURL?.replace('upload/',
-  'upload/w_200,h_200,c_auto,q_auto/f_auto/'); %>
-  
-  <!DOCTYPE html>
-  <html lang="tr">
-    <head>
-      <%- include('../layouts/head', { title: `${profileName} | Emmi` }) %>
-      <script src="/js/script.js" defer></script>
-    </head>
-    <body>
+'/images/profilePhoto-default.jpg' } = {}, name: profileName, username:
+profileUsername, bio, blogPublished, createdAt } = locals.profile; const
+compressedProfilePhotoURL = profilePhotoURL?.replace('upload/',
+'upload/w_200,h_200,c_auto,q_auto/f_auto/'); %>
+
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <%- include('../layouts/head', { title: `${profileName} | Emmi` }) %>
+    <script src="/js/script.js" defer></script>
+  </head>
+  <body>
+    <!--
+    #Üst uygulama çubuğu
+    -->
+    <%- include("../partials/top_app_bar") %>
+
+    <main class="main">
       <!--
-      #Üst uygulama çubuğu
-      -->
-      <%- include("../partials/top_app_bar") %>
-  
-      <main class="main">
-        <!--
-      #Profile Page
-      -->
-        <article class="page profile-page">
-          <div class="container">
-            <div class="profile-card">
-              <figure class="profile-image img-holder">
-                <img
-                  src="<%=compressedProfilePhotoURL%>"
-                  width="200"
-                  height="200"
-                  alt="<%= profileName %>"
-                  class="img-cover"
-                />
-              </figure>
-              <div class="profile-content">
-                <h3 class="title headline-medium text-on-surface">
-                  <%= profileName %>
-                </h3>
-                <p class="bio body-large text-on-surface-variant">
-                  <%= bio || '404 Biyografi bulunamadı' %>
-                </p>
-                <div class="profile-meta-list">
-                  <div class="profile-meta-item text-on-surface-variant">
-                    <span class="material-symbols-rounded" aria-hidden="true"
-                      >calendar_month</span
-                    >
-                    <p class="body-large text-on-surface-variant">
-                      <%= new Date(createdAt).toLocaleDateString('tr-TR', { day:
-                      '2-digit', month: 'long', year: 'numeric' }) %> Tarihinden
-                      bu yana bizimle birliktesin.
-                    </p>
-                  </div>
-                  <div class="profile-meta-item text-on-surface-variant">
-                    <span class="material-symbols-rounded" aria-hidden="true"
-                      >article</span
-                    >
-                    <p class="body-large text-on-surface-variant">
-                      <%=blogPublished%> Blog yayınlandı
-                    </p>
-                  </div>
-                </div>
-  
-                <% if (profileUsername==locals.sessionUser?.username) {%>
-                <a href="/settings" class="btn filled-tonal">
+    #Profile Page
+    -->
+      <article class="page profile-page">
+        <div class="container">
+          <div class="profile-card">
+            <figure class="profile-image img-holder">
+              <img
+                src="<%=compressedProfilePhotoURL%>"
+                width="200"
+                height="200"
+                alt="<%= profileName %>"
+                class="img-cover"
+              />
+            </figure>
+            <div class="profile-content">
+              <h3 class="title headline-medium text-on-surface">
+                <%= profileName %>
+              </h3>
+              <p class="bio body-large text-on-surface-variant">
+                <%= bio || '404 Biyografi bulunamadı' %>
+              </p>
+              <div class="profile-meta-list">
+                <div class="profile-meta-item text-on-surface-variant">
                   <span class="material-symbols-rounded" aria-hidden="true"
-                    >edit_square</span
+                    >calendar_month</span
                   >
-                  <p class="label-large">Profil düzenle</p>
-                  <div class="state-layer"></div>
-                </a>
-                <% } %>
+                  <p class="body-large text-on-surface-variant">
+                    <%= new Date(createdAt).toLocaleDateString('tr-TR', { day:
+                    '2-digit', month: 'long', year: 'numeric' }) %> Tarihinden
+                    bu yana bizimle birliktesin.
+                  </p>
+                </div>
+                <div class="profile-meta-item text-on-surface-variant">
+                  <span class="material-symbols-rounded" aria-hidden="true"
+                    >article</span
+                  >
+                  <p class="body-large text-on-surface-variant">
+                    <%=blogPublished%> Blog yayınlandı
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="divider">
-              <div class="blog-list">
-                <% if (locals.profileBlogs.length){
-                %><%locals.profileBlogs.forEach(blog=>{%> <%-
-                include('../partials/card',{ blog })%> <%})%> <%}%>
-              </div>
-              <% if (locals.pagination.next || locals.pagination.prev){ %><%-
-              include('../partials/pagination')%><%}%>
+
+              <% if (profileUsername==locals.sessionUser?.username) {%>
+              <a href="/settings" class="btn filled-tonal">
+                <span class="material-symbols-rounded" aria-hidden="true"
+                  >edit_square</span
+                >
+                <p class="label-large">Profil düzenle</p>
+                <div class="state-layer"></div>
+              </a>
+              <% } %>
             </div>
           </div>
-        </article>
-      </main>
-      <!--
-      #Footer
-      -->
-      <%- include("../layouts/footer") %>
-    </body>
-  </html>
-  
+          <div class="divider">
+            <div class="blog-list">
+              <% if (locals.profileBlogs.length){
+              %><%locals.profileBlogs.forEach(blog=>{%> <%-
+              include('../partials/card',{ blog })%> <%})%> <%}%>
+            </div>
+            <% if (locals.pagination.next || locals.pagination.prev){ %><%-
+            include('../partials/pagination')%><%}%>
+          </div>
+        </div>
+      </article>
+    </main>
+    <!--
+    #Footer
+    -->
+    <%- include("../layouts/footer") %>
+  </body>
+</html>
