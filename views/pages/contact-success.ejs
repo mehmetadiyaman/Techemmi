@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('../layouts/head', { title: 'Mesaj Gönderildi | Emmi' }) %>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/contact.css">
+</head>
+<body>
+    <%- include("../partials/top_app_bar") %>
+    
+    <main class="main">
+        <section class="success-section">
+            <div class="success-container">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h1>Mesajınız Başarıyla Gönderildi!</h1>
+                <p>En kısa sürede size dönüş yapacağız.</p>
+                <div class="success-actions">
+                    <a href="/" class="btn btn-primary">Ana Sayfaya Dön</a>
+                    <a href="/contact" class="btn btn-secondary">Yeni Mesaj Gönder</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <%- include("../layouts/footer") %>
+</body>
+</html> 
