@@ -39,40 +39,6 @@ profilePhoto?.replace('upload/', 'upload/w_40,h_40,c_auto,q_auto/f_auto/'); %>
     href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
     rel="stylesheet"
   />
-  <div class="search-box">
-    <span class="material-icons-round search-icon">search</span>
-    <input
-      type="text"
-      id="search-input"
-      placeholder="Arama"
-      onkeypress="handleSearch(event)"
-    />
-  </div>
-
-  <!-- Arama Sonuçları Bölümü -->
-  <ul id="results-list" class="results-list"></ul>
-
-  <script>
-    async function handleSearch(event) {
-      if (event.key === "Enter") {
-        const query = event.target.value;
-        try {
-          const response = await fetch(`/api/search?q=${query}`);
-          const results = await response.json();
-          const resultsList = document.getElementById("results-list");
-          resultsList.innerHTML = "";
-
-          results.forEach((post) => {
-            const listItem = document.createElement("li");
-            listItem.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
-            resultsList.appendChild(listItem);
-          });
-        } catch (error) {
-          console.error("Arama hatası:", error);
-        }
-      }
-    }
-  </script>
 
   <link
     href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"

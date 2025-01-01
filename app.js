@@ -36,6 +36,7 @@ const deleteBlog = require("./src/routes/blog_delete_route");
 const settings = require("./src/routes/settings_route");
 const categories = require("./src/routes/categories_route");
 const contact = require("./src/routes/contact_route");
+const chatRoute = require("./src/routes/chat_route");
 /**
  * görünüm kısmını ayarla
  */
@@ -94,7 +95,8 @@ app.use("/blogs", blogUpdate, deleteBlog);
 app.use("/dashboard", dashboard);
 app.use("/categories", categories);
 app.use("/settings", settings);
-app.use("/contact", contact); 
+app.use("/contact", contact);
+app.use("/api", chatRoute);
 
 // Yeni haber route'unu ekle
 app.use("/", require("./src/routes/news_route")); // src klasörü içinde olduğunu varsayıyorum
