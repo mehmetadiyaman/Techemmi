@@ -7,11 +7,18 @@
 
 class ChatWidget {
   constructor() {
+    if (!this.shouldShowWidget()) return;
+
     this.sessionId = Math.random().toString(36).substring(7);
     this.messages = [];
     this.isExpanded = false;
     this.isTyping = false;
     this.init();
+  }
+
+  shouldShowWidget() {
+    const isAuthenticated = document.body.querySelector('.menu-wrapper[data-menu-wrapper]') !== null;
+    return isAuthenticated;
   }
 
   init() {
