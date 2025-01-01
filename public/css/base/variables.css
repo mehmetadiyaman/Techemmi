@@ -1,0 +1,25 @@
+:root {
+  /* Light Theme Variables */
+  --bg-primary-light: #ffffff;
+  --bg-secondary-light: #f8f9fa;
+  --text-primary-light: #333333;
+  --text-secondary-light: #666666;
+  --border-light: #e0e0e0;
+  --input-bg-light: #ffffff;
+  --input-border-light: #ddd;
+
+  /* Dark Theme Variables */
+  --bg-primary-dark: #1a1a1a;
+  --bg-secondary-dark: #2d2d2d;
+  --text-primary-dark: #ffffff;
+  --text-secondary-dark: #cccccc;
+  --border-dark: #404040;
+  --input-bg-dark: #333333;
+  --input-border-dark: #404040;
+
+  /* Common Variables */
+  --primary-color: #007bff;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --border-radius: 4px;
+} 
