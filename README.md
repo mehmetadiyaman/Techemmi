@@ -2,6 +2,24 @@
 
 Bu proje, kullanıcıların blog yazıları oluşturabileceği, okuyabileceği ve yönetebileceği bir **Node.js** tabanlı web uygulamasıdır. Kullanıcı yönetimi, blog düzenleme, dinamik içerik sunumu ve teknolojik haberlerden haberdar olmayı sağlayan ek özellikler sunar. Proje, modern web geliştirme standartlarına uygun olarak yapılandırılmıştır.
 
+Web uygulamanızı şu link üzerinden ziyaret edebilirsiniz: [TechEmmi Blog Platformu](https://techemmi.onrender.com/)
+
+---
+
+## 📸 
+
+### Ana Sayfa
+![Ana Sayfa](public/images/anasayfa.png)
+
+### Blog Oluşturma Sayfası
+![Blog Oluşturma](public/images/blogolusturma.png)
+
+### İletişim Sayfası
+![İletişim Sayfası](public/images/iletisim.png)
+
+### Kullanıcı Profil Sayfası
+![Profil Sayfası](public/images/profil.png)
+
 ---
 
 ## 🚀 Özellikler
@@ -48,8 +66,8 @@ Projeyi yerel ortamınıza kurmak için aşağıdaki adımları izleyin:
 
 ### 1️⃣ Depoyu Klonlayın
 ```bash
-git clone https://github.com/kullaniciadi/emmi-blog.git
-cd emmi-blog
+git clone https://github.com/kullaniciadi/Techemmi-blog.git 
+cd techemmi-blog
 ```
 
 ### 2️⃣ Gerekli Bağımlılıkları Yükleyin
