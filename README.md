@@ -2,23 +2,23 @@
 
 Bu proje, kullanıcıların blog yazıları oluşturabileceği, okuyabileceği ve yönetebileceği bir **Node.js** tabanlı web uygulamasıdır. Kullanıcı yönetimi, blog düzenleme, dinamik içerik sunumu ve teknolojik haberlerden haberdar olmayı sağlayan ek özellikler sunar. Proje, modern web geliştirme standartlarına uygun olarak yapılandırılmıştır.
 
-Web uygulamanızı şu link üzerinden ziyaret edebilirsiniz: [TechEmmi Blog Platformu](https://techemmi.onrender.com/)
 
 ---
 
 ## 📸 
 
-### Ana Sayfa
-![Ana Sayfa](public/images/anasayfa.png)
+## 📸 Web Sitesi Ekran Görüntüleri
 
-### Blog Oluşturma Sayfası
-![Blog Oluşturma](public/images/blogolusturma.png)
+### Ana Sayfa, Blog Oluşturma Sayfası, İletişim Sayfası ve Profil Sayfası
+<div style="display: flex; justify-content: space-between;">
+  <img src="public/images/anasayfa.png" alt="Ana Sayfa" style="width: 45%; height: auto; margin-right: 10px;">
+  <img src="public/images/blogolusturma.png" alt="Blog Oluşturma" style="width: 45%; height: auto; margin-right: 10px;">
+</div>
 
-### İletişim Sayfası
-![İletişim Sayfası](public/images/iletisim.png)
-
-### Kullanıcı Profil Sayfası
-![Profil Sayfası](public/images/profil.png)
+<div style="display: flex; justify-content: space-between; margin-top: 10px;">
+  <img src="public/images/iletisim.png" alt="İletişim Sayfası" style="width: 45%; height: auto; margin-right: 10px;">
+  <img src="public/images/profil.png" alt="Profil Sayfası" style="width: 45%; height: auto; margin-right: 10px;">
+</div>
 
 ---
 
