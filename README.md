@@ -4,23 +4,13 @@ Bu proje, kullanıcıların blog yazıları oluşturabileceği, okuyabileceği v
 
 
 ---
+## 📸
 
-## 📸 
-
-## 📸 Web Sitesi Ekran Görüntüleri
-
-## 📸 Web Sitesi Ekran Görüntüleri
-
-### Ana Sayfa, Blog Oluşturma Sayfası, İletişim Sayfası ve Profil Sayfası
-
-<div style="position: relative; width: 100%; height: 400px;">
-  <img src="public/images/anasayfa.png" alt="Ana Sayfa" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; object-fit: cover; border-radius: 10px;">
-  <img src="public/images/blogolusturma.png" alt="Blog Oluşturma" style="position: absolute; top: 0; left: 50%; width: 50%; height: 100%; object-fit: cover; border-radius: 10px;">
-</div>
-
-<div style="position: relative; width: 100%; height: 400px; margin-top: 20px;">
-  <img src="public/images/iletisim.png" alt="İletişim Sayfası" style="position: absolute; top: 0; left: 0; width: 50%; height: 100%; object-fit: cover; border-radius: 10px;">
-  <img src="public/images/profil.png" alt="Profil Sayfası" style="position: absolute; top: 0; left: 50%; width: 50%; height: 100%; object-fit: cover; border-radius: 10px;">
+<div style="position: relative; width: 100%; height: 400px; max-width: 800px; margin: 0 auto;">
+  <img src="public/images/anasayfa.png" alt="Ana Sayfa" style="position: absolute; top: 10%; left: 5%; width: 45%; height: auto; border-radius: 10px; transform: rotate(-10deg); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); z-index: 1;">
+  <img src="public/images/blogolusturma.png" alt="Blog Oluşturma" style="position: absolute; top: 20%; left: 55%; width: 40%; height: auto; border-radius: 10px; transform: rotate(5deg); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); z-index: 2;">
+  <img src="public/images/iletisim.png" alt="İletişim Sayfası" style="position: absolute; top: 50%; left: 25%; width: 50%; height: auto; border-radius: 10px; transform: rotate(3deg); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); z-index: 3;">
+  <img src="public/images/profil.png" alt="Profil Sayfası" style="position: absolute; top: 35%; left: 40%; width: 45%; height: auto; border-radius: 10px; transform: rotate(-5deg); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); z-index: 4;">
 </div>
 
 ---
